@@ -1,0 +1,952 @@
+
+
+
+
+<script type="text/javascript" src="https://www.sopa.org/wp-content/themes/twentytwelve/js/jquery-1.10.1.min.js" ></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+// binding the check all box to onClick event
+$(".select_all").click(function () {
+
+		var checkAll = $(".select_all").prop('checked');
+		if (checkAll) {
+		$(".selected_val").prop("checked", true);
+		} else {
+		$(".selected_val").prop("checked", false);
+		}
+ 
+   });
+ 
+// if all checkboxes are selected, then checked the main checkbox class and vise versa
+$(".selected_val").click(function(){
+ 
+        if($(".selected_val").length == $(".subscheked:checked").length) {
+            $(".select_all").attr("checked", "checked");
+        } else {
+            $(".select_all").removeAttr("checked");
+        }
+ 
+   });
+
+});
+
+ 
+</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+.widefat h3 {
+text-align: left;
+width: 342px;
+	}
+</style>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+  	$( "#datetimepicker1" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    $( "#datetimepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });   
+    $( "#Y_estb1" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    $( "#Y_estb" ).datepicker({ dateFormat: 'yy-mm-dd' });
+	$( "#date_comm_pro" ).datepicker({ dateFormat: 'yy-mm-dd' });
+  });
+  </script>
+  <script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery("select#Membership_Type").change(function(){
+    jQuery(this).find("option:selected").each(function(){
+      if(jQuery(this).attr("value")=="Full"){
+      	$("#N_Business option[value='Processor/manufacturer & Explorer']").attr("selected","selected");
+			$("#N_Business option[value!='Processor/manufacturer & Explorer']").hide();      	
+            		
+      }
+      else {      
+			$("#N_Business").find("option").removeAttr("selected");
+			$("#N_Business option[value!='Processor/manufacturer & Explorer']").show();      
+        		
+      }
+    });
+  }).change();  
+  
+    jQuery("select#Membership_Type1").change(function(){
+    jQuery(this).find("option:selected").each(function(){
+      if(jQuery(this).attr("value")=="Full"){
+      	$("#N_Business1 option[value='Processor/manufacturer & Explorer']").attr("selected","selected");
+			$("#N_Business1 option[value!='Processor/manufacturer & Explorer']").hide();      	
+            		
+      }
+      else {      
+			$("#N_Business1").find("option").removeAttr("selected");
+			$("#N_Business1 option[value!='Processor/manufacturer & Explorer']").show();      
+        		
+      }
+    });
+  }).change();  
+  
+  
+});
+</script>
+
+
+
+
+
+
+
+<style type="text/css">.bold-option{font-weight: 900;}</style>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	function newsType(a){
+		if(a == 'url'){
+			document.getElementById("link_upload").style.display = "table-row";
+			document.getElementById("pdf_upload").style.display = "none";
+		}	
+		else{
+			document.getElementById("pdf_upload").style.display = "table-row";
+			document.getElementById("link_upload").style.display = "none";
+		}
+	}
+
+	function checkNewsType(){
+		if(document.getElementById("pdf_type").checked == true)
+		{
+			document.getElementById("pdf_upload").style.display = "table-row";
+			document.getElementById("link_upload").style.display = "none";	
+		}
+		else{
+			document.getElementById("link_upload").style.display = "table-row";
+			document.getElementById("pdf_upload").style.display = "none";
+		}
+	}
+</script>
+<div class="inner-title"><h2></h2></div>
+<!--<div id="primary" class="site-content">-->
+<div id="content" role="main" class="innerpage">
+	       
+
+<div class="title"><h2>Array SOYBEAN PRODUCTION BY STATE </h2></div>
+<div class="statistics-table" style="height:auto">
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="easyui-datagrid"
+				data-options="                
+                rowStyler: function(index,row){
+                    if (row.Year == 'Total'){
+                        return 'background-color:#999999;color:#fff;font-weight:bold;';
+                    }
+                }
+            ">
+
+<thead class="fro" frozen="true">
+    <tr>
+    	<th field="sno" >SNo.</th>
+	    <th field="state" width="200" >States</th>
+	    	     <th colspan="3" field="head_2007">Kharif 2007</th>
+		 	     <th colspan="3" field="head_2008">Kharif 2008</th>
+		 	     <th colspan="3" field="head_2009">Kharif 2009</th>
+		 	     <th colspan="3" field="head_2010">Kharif 2010</th>
+		 	     <th colspan="3" field="head_2011">Kharif 2011</th>
+		 	     <th colspan="3" field="head_2012">Kharif 2012</th>
+		 	     <th colspan="3" field="head_2013">Kharif 2013</th>
+		 	     <th colspan="3" field="head_2014">Kharif 2014</th>
+		 	     <th colspan="3" field="head_2015">Kharif 2015</th>
+		 	     <th colspan="3" field="head_2016">Kharif 2016</th>
+		 	     <th colspan="3" field="head_2017">Kharif 2017</th>
+		 	     <th colspan="3" field="head_2018">Kharif 2018</th>
+		 	     <th colspan="3" field="head_2019">Kharif 2019</th>
+		 	     <th colspan="3" field="head_2020">Kharif 2020</th>
+		 	     <th colspan="3" field="head_2021">Kharif 2021</th>
+		 	     <th colspan="3" field="head_2022">Kharif 2022</th>
+		     </tr>
+</thead>
+<thead>
+</thead>
+<thead>
+	<tr>
+	    	    
+	    <td width="120" field="area2007" width="110"></td>	
+	     <td width="120" field="area2007" width="110"></td>	 
+	      
+	    <td width="120" field="area2007" width="110">Sowing Area</td>
+	    <td width="140" field="yield2007" width="110">Expected Yield</td>
+	    <td width="170" field="production2007" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2008" width="110">Sowing Area</td>
+	    <td width="140" field="yield2008" width="110">Expected Yield</td>
+	    <td width="170" field="production2008" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2009" width="110">Sowing Area</td>
+	    <td width="140" field="yield2009" width="110">Expected Yield</td>
+	    <td width="170" field="production2009" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2010" width="110">Sowing Area</td>
+	    <td width="140" field="yield2010" width="110">Expected Yield</td>
+	    <td width="170" field="production2010" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2011" width="110">Sowing Area</td>
+	    <td width="140" field="yield2011" width="110">Expected Yield</td>
+	    <td width="170" field="production2011" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2012" width="110">Sowing Area</td>
+	    <td width="140" field="yield2012" width="110">Expected Yield</td>
+	    <td width="170" field="production2012" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2013" width="110">Sowing Area</td>
+	    <td width="140" field="yield2013" width="110">Expected Yield</td>
+	    <td width="170" field="production2013" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2014" width="110">Sowing Area</td>
+	    <td width="140" field="yield2014" width="110">Expected Yield</td>
+	    <td width="170" field="production2014" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2015" width="110">Sowing Area</td>
+	    <td width="140" field="yield2015" width="110">Expected Yield</td>
+	    <td width="170" field="production2015" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2016" width="110">Sowing Area</td>
+	    <td width="140" field="yield2016" width="110">Expected Yield</td>
+	    <td width="170" field="production2016" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2017" width="110">Sowing Area</td>
+	    <td width="140" field="yield2017" width="110">Expected Yield</td>
+	    <td width="170" field="production2017" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2018" width="110">Sowing Area</td>
+	    <td width="140" field="yield2018" width="110">Expected Yield</td>
+	    <td width="170" field="production2018" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2019" width="110">Sowing Area</td>
+	    <td width="140" field="yield2019" width="110">Expected Yield</td>
+	    <td width="170" field="production2019" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2020" width="110">Sowing Area</td>
+	    <td width="140" field="yield2020" width="110">Expected Yield</td>
+	    <td width="170" field="production2020" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2021" width="110">Sowing Area</td>
+	    <td width="140" field="yield2021" width="110">Expected Yield</td>
+	    <td width="170" field="production2021" width="110">Estimated Production</td>
+	     
+	    <td width="120" field="area2022" width="110">Sowing Area</td>
+	    <td width="140" field="yield2022" width="110">Expected Yield</td>
+	    <td width="170" field="production2022" width="110">Estimated Production</td>
+	    	</tr>
+</thead>
+
+
+   
+<tbody>
+<!--States-->
+
+
+	
+<tr>
+	 <td class="text_cn" >1.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Rajasthan&submit=Search">Rajasthan</a></td>
+          
+		<td class="text_cn">7.635 </td>
+	    <td class="text_cn">992 </td>
+	    <td class="text_cn">7.574 </td>
+	        
+		<td class="text_cn">8.524 </td>
+	    <td class="text_cn">860 </td>
+	    <td class="text_cn">7.332 </td>
+	        
+		<td class="text_cn">7.094 </td>
+	    <td class="text_cn">859 </td>
+	    <td class="text_cn">6.096 </td>
+	        
+		<td class="text_cn">6.920 </td>
+	    <td class="text_cn">1103 </td>
+	    <td class="text_cn">7.634 </td>
+	        
+		<td class="text_cn">8.964 </td>
+	    <td class="text_cn">1393 </td>
+	    <td class="text_cn">12.489 </td>
+	        
+		<td class="text_cn">9.870 </td>
+	    <td class="text_cn">1164 </td>
+	    <td class="text_cn">11.488 </td>
+	        
+		<td class="text_cn">10.588 </td>
+	    <td class="text_cn">661 </td>
+	    <td class="text_cn">7.003 </td>
+	        
+		<td class="text_cn">6.820 </td>
+	    <td class="text_cn">831 </td>
+	    <td class="text_cn">5.670 </td>
+	        
+		<td class="text_cn">10.240 </td>
+	    <td class="text_cn">768 </td>
+	    <td class="text_cn">7.865 </td>
+	        
+		<td class="text_cn">9.814 </td>
+	    <td class="text_cn">910 </td>
+	    <td class="text_cn">8.927 </td>
+	        
+		<td class="text_cn">9.245 </td>
+	    <td class="text_cn">811 </td>
+	    <td class="text_cn">7.499 </td>
+	        
+		<td class="text_cn">9.212 </td>
+	    <td class="text_cn">971 </td>
+	    <td class="text_cn">8.946 </td>
+	        
+		<td class="text_cn">9.627 </td>
+	    <td class="text_cn">681 </td>
+	    <td class="text_cn">6.560 </td>
+	        
+		<td class="text_cn">11.002 </td>
+	    <td class="text_cn">780 </td>
+	    <td class="text_cn">8.585 </td>
+	        
+		<td class="text_cn">9.253 </td>
+	    <td class="text_cn">761 </td>
+	    <td class="text_cn">7.046 </td>
+	        
+		<td class="text_cn">10.344 </td>
+	    <td class="text_cn">953 </td>
+	    <td class="text_cn">9.855 </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >2.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Madhya Pradesh&submit=Search">Madhya Pradesh</a></td>
+          
+		<td class="text_cn">48.792 </td>
+	    <td class="text_cn">1045 </td>
+	    <td class="text_cn">51.009 </td>
+	        
+		<td class="text_cn">51.434 </td>
+	    <td class="text_cn">1010 </td>
+	    <td class="text_cn">51.940 </td>
+	        
+		<td class="text_cn">52.985 </td>
+	    <td class="text_cn">1040 </td>
+	    <td class="text_cn">55.087 </td>
+	        
+		<td class="text_cn">55.193 </td>
+	    <td class="text_cn">1105 </td>
+	    <td class="text_cn">60.989 </td>
+	        
+		<td class="text_cn">57.300 </td>
+	    <td class="text_cn">1076 </td>
+	    <td class="text_cn">61.669 </td>
+	        
+		<td class="text_cn">58.128 </td>
+	    <td class="text_cn">1116 </td>
+	    <td class="text_cn">64.861 </td>
+	        
+		<td class="text_cn">62.605 </td>
+	    <td class="text_cn">684 </td>
+	    <td class="text_cn">42.849 </td>
+	        
+		<td class="text_cn">55.462 </td>
+	    <td class="text_cn">896 </td>
+	    <td class="text_cn">49.679 </td>
+	        
+		<td class="text_cn">56.128 </td>
+	    <td class="text_cn">608 </td>
+	    <td class="text_cn">34.124 </td>
+	        
+		<td class="text_cn">54.010 </td>
+	    <td class="text_cn">1020 </td>
+	    <td class="text_cn">55.068 </td>
+	        
+		<td class="text_cn">50.100 </td>
+	    <td class="text_cn">838 </td>
+	    <td class="text_cn">42.001 </td>
+	        
+		<td class="text_cn">54.099 </td>
+	    <td class="text_cn">1075 </td>
+	    <td class="text_cn">58.180 </td>
+	        
+		<td class="text_cn">51.952 </td>
+	    <td class="text_cn">772 </td>
+	    <td class="text_cn">40.107 </td>
+	        
+		<td class="text_cn">58.541 </td>
+	    <td class="text_cn">714 </td>
+	    <td class="text_cn">41.774 </td>
+	        
+		<td class="text_cn">55.687 </td>
+	    <td class="text_cn">939 </td>
+	    <td class="text_cn">52.292 </td>
+	        
+		<td class="text_cn">50.645 </td>
+	    <td class="text_cn">1051 </td>
+	    <td class="text_cn">53.248 </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >3.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Maharashtra&submit=Search">Maharashtra</a></td>
+          
+		<td class="text_cn">26.515 </td>
+	    <td class="text_cn">1230 </td>
+	    <td class="text_cn">32.617 </td>
+	        
+		<td class="text_cn">30.684 </td>
+	    <td class="text_cn">925 </td>
+	    <td class="text_cn">28.387 </td>
+	        
+		<td class="text_cn">30.320 </td>
+	    <td class="text_cn">982 </td>
+	    <td class="text_cn">29.773 </td>
+	        
+		<td class="text_cn">26.030 </td>
+	    <td class="text_cn">1058 </td>
+	    <td class="text_cn">27.546 </td>
+	        
+		<td class="text_cn">30.613 </td>
+	    <td class="text_cn">1163 </td>
+	    <td class="text_cn">35.613 </td>
+	        
+		<td class="text_cn">32.130 </td>
+	    <td class="text_cn">1196 </td>
+	    <td class="text_cn">38.423 </td>
+	        
+		<td class="text_cn">38.703 </td>
+	    <td class="text_cn">982 </td>
+	    <td class="text_cn">38.002 </td>
+	        
+		<td class="text_cn">38.008 </td>
+	    <td class="text_cn">631 </td>
+	    <td class="text_cn">24.002 </td>
+	        
+		<td class="text_cn">35.852 </td>
+	    <td class="text_cn">614 </td>
+	    <td class="text_cn">22.000 </td>
+	        
+		<td class="text_cn">35.809 </td>
+	    <td class="text_cn">1045 </td>
+	    <td class="text_cn">37.429 </td>
+	        
+		<td class="text_cn">34.484 </td>
+	    <td class="text_cn">841 </td>
+	    <td class="text_cn">29.003 </td>
+	        
+		<td class="text_cn">36.390 </td>
+	    <td class="text_cn">944 </td>
+	    <td class="text_cn">34.343 </td>
+	        
+		<td class="text_cn">37.365 </td>
+	    <td class="text_cn">1055 </td>
+	    <td class="text_cn">39.415 </td>
+	        
+		<td class="text_cn">40.398 </td>
+	    <td class="text_cn">1125 </td>
+	    <td class="text_cn">45.446 </td>
+	        
+		<td class="text_cn">43.848 </td>
+	    <td class="text_cn">1102 </td>
+	    <td class="text_cn">48.325 </td>
+	        
+		<td class="text_cn">43.446 </td>
+	    <td class="text_cn">1080 </td>
+	    <td class="text_cn">46.911 </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >4.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Andhra Pradesh&submit=Search">Andhra Pradesh</a></td>
+          
+		<td class="text_cn">1.070 </td>
+	    <td class="text_cn">1275 </td>
+	    <td class="text_cn">1.364 </td>
+	        
+		<td class="text_cn">1.500 </td>
+	    <td class="text_cn">1040 </td>
+	    <td class="text_cn">1.560 </td>
+	        
+		<td class="text_cn">1.810 </td>
+	    <td class="text_cn">1050 </td>
+	    <td class="text_cn">1.901 </td>
+	        
+		<td class="text_cn">1.410 </td>
+	    <td class="text_cn">1075 </td>
+	    <td class="text_cn">1.516 </td>
+	        
+		<td class="text_cn">1.550 </td>
+	    <td class="text_cn">1050 </td>
+	    <td class="text_cn">1.628 </td>
+	        
+		<td class="text_cn">1.950 </td>
+	    <td class="text_cn">1050 </td>
+	    <td class="text_cn">2.048 </td>
+	        
+		<td class="text_cn">2.840 </td>
+	    <td class="text_cn">815 </td>
+	    <td class="text_cn">2.315 </td>
+	        
+		<td class="text_cn">2.720 </td>
+	    <td class="text_cn">975 </td>
+	    <td class="text_cn">2.652 </td>
+	        
+		<td class="text_cn">2.551 </td>
+	    <td class="text_cn">615 </td>
+	    <td class="text_cn">1.569 </td>
+	        
+		<td class="text_cn">2.993 </td>
+	    <td class="text_cn">815 </td>
+	    <td class="text_cn">2.439 </td>
+	        
+		<td class="text_cn">1.652 </td>
+	    <td class="text_cn">639 </td>
+	    <td class="text_cn">1.056 </td>
+	        
+		<td class="text_cn">1.791 </td>
+	    <td class="text_cn">877 </td>
+	    <td class="text_cn">1.571 </td>
+	        
+		<td class="text_cn">1.783 </td>
+	    <td class="text_cn">846 </td>
+	    <td class="text_cn">1.508 </td>
+	        
+		<td class="text_cn">1.599 </td>
+	    <td class="text_cn">1028 </td>
+	    <td class="text_cn">1.644 </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >5.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Chhattisgarh&submit=Search">Chhattisgarh</a></td>
+          
+		<td class="text_cn">1.100 </td>
+	    <td class="text_cn">815 </td>
+	    <td class="text_cn">0.897 </td>
+	        
+		<td class="text_cn">1.210 </td>
+	    <td class="text_cn">875 </td>
+	    <td class="text_cn">1.059 </td>
+	        
+		<td class="text_cn">1.290 </td>
+	    <td class="text_cn">925 </td>
+	    <td class="text_cn">1.193 </td>
+	        
+		<td class="text_cn">1.490 </td>
+	    <td class="text_cn">1050 </td>
+	    <td class="text_cn">1.565 </td>
+	        
+		<td class="text_cn">1.500 </td>
+	    <td class="text_cn">1025 </td>
+	    <td class="text_cn">1.538 </td>
+	        
+		<td class="text_cn">1.520 </td>
+	    <td class="text_cn">1025 </td>
+	    <td class="text_cn">1.558 </td>
+	        
+		<td class="text_cn">1.560 </td>
+	    <td class="text_cn">598 </td>
+	    <td class="text_cn">0.933 </td>
+	        
+		<td class="text_cn">1.470 </td>
+	    <td class="text_cn">915 </td>
+	    <td class="text_cn">1.345 </td>
+	        
+		<td class="text_cn">1.410 </td>
+	    <td class="text_cn">516 </td>
+	    <td class="text_cn">0.728 </td>
+	        
+		<td class="text_cn">1.340 </td>
+	    <td class="text_cn">925 </td>
+	    <td class="text_cn">1.240 </td>
+	        
+		<td class="text_cn">1.320 </td>
+	    <td class="text_cn">654 </td>
+	    <td class="text_cn">0.863 </td>
+	        
+		<td class="text_cn">1.281 </td>
+	    <td class="text_cn">865 </td>
+	    <td class="text_cn">1.108 </td>
+	        
+		<td class="text_cn">0.742 </td>
+	    <td class="text_cn">726 </td>
+	    <td class="text_cn">0.539 </td>
+	        
+		<td class="text_cn">0.776 </td>
+	    <td class="text_cn">884 </td>
+	    <td class="text_cn">0.686 </td>
+	        
+		<td class="text_cn">0.513 </td>
+	    <td class="text_cn">910 </td>
+	    <td class="text_cn">0.467 </td>
+	        
+		<td class="text_cn">0.420 </td>
+	    <td class="text_cn">1050 </td>
+	    <td class="text_cn">0.441 </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >6.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Gujarat&submit=Search">Gujarat</a></td>
+          
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">0.830 </td>
+	    <td class="text_cn">1025 </td>
+	    <td class="text_cn">0.851 </td>
+	        
+		<td class="text_cn">0.930 </td>
+	    <td class="text_cn">815 </td>
+	    <td class="text_cn">0.758 </td>
+	        
+		<td class="text_cn">0.742 </td>
+	    <td class="text_cn">945 </td>
+	    <td class="text_cn">0.701 </td>
+	        
+		<td class="text_cn">0.920 </td>
+	    <td class="text_cn">810 </td>
+	    <td class="text_cn">0.745 </td>
+	        
+		<td class="text_cn">1.379 </td>
+	    <td class="text_cn">930 </td>
+	    <td class="text_cn">1.282 </td>
+	        
+		<td class="text_cn">1.290 </td>
+	    <td class="text_cn">688 </td>
+	    <td class="text_cn">0.888 </td>
+	        
+		<td class="text_cn">1.342 </td>
+	    <td class="text_cn">925 </td>
+	    <td class="text_cn">1.241 </td>
+	        
+		<td class="text_cn">1.003 </td>
+	    <td class="text_cn">858 </td>
+	    <td class="text_cn">0.861 </td>
+	        
+		<td class="text_cn">1.492 </td>
+	    <td class="text_cn">972 </td>
+	    <td class="text_cn">1.450 </td>
+	        
+		<td class="text_cn">2.237 </td>
+	    <td class="text_cn">1015 </td>
+	    <td class="text_cn">2.271 </td>
+	        
+		<td class="text_cn">2.216 </td>
+	    <td class="text_cn">1087 </td>
+	    <td class="text_cn">2.409 </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >7.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Karnataka&submit=Search">Karnataka</a></td>
+          
+		<td class="text_cn">1.620 </td>
+	    <td class="text_cn">945 </td>
+	    <td class="text_cn">1.531 </td>
+	        
+		<td class="text_cn">1.990 </td>
+	    <td class="text_cn">1015 </td>
+	    <td class="text_cn">2.020 </td>
+	        
+		<td class="text_cn">2.310 </td>
+	    <td class="text_cn">1025 </td>
+	    <td class="text_cn">2.368 </td>
+	        
+		<td class="text_cn">1.800 </td>
+	    <td class="text_cn">1025 </td>
+	    <td class="text_cn">1.845 </td>
+	        
+		<td class="text_cn">2.170 </td>
+	    <td class="text_cn">1070 </td>
+	    <td class="text_cn">2.322 </td>
+	        
+		<td class="text_cn">2.000 </td>
+	    <td class="text_cn">1050 </td>
+	    <td class="text_cn">2.100 </td>
+	        
+		<td class="text_cn">2.470 </td>
+	    <td class="text_cn">805 </td>
+	    <td class="text_cn">1.988 </td>
+	        
+		<td class="text_cn">2.920 </td>
+	    <td class="text_cn">828 </td>
+	    <td class="text_cn">2.418 </td>
+	        
+		<td class="text_cn">2.850 </td>
+	    <td class="text_cn">615 </td>
+	    <td class="text_cn">1.753 </td>
+	        
+		<td class="text_cn">3.240 </td>
+	    <td class="text_cn">785 </td>
+	    <td class="text_cn">2.543 </td>
+	        
+		<td class="text_cn">2.710 </td>
+	    <td class="text_cn">639 </td>
+	    <td class="text_cn">1.732 </td>
+	        
+		<td class="text_cn">3.190 </td>
+	    <td class="text_cn">911 </td>
+	    <td class="text_cn">2.906 </td>
+	        
+		<td class="text_cn">3.302 </td>
+	    <td class="text_cn">816 </td>
+	    <td class="text_cn">2.694 </td>
+	        
+		<td class="text_cn">3.320 </td>
+	    <td class="text_cn">1124 </td>
+	    <td class="text_cn">3.732 </td>
+	        
+		<td class="text_cn">3.827 </td>
+	    <td class="text_cn">1005 </td>
+	    <td class="text_cn">3.846 </td>
+	        
+		<td class="text_cn">4.376 </td>
+	    <td class="text_cn">1005 </td>
+	    <td class="text_cn">4.398 </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >8.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Others&submit=Search">Others</a></td>
+          
+		<td class="text_cn">1.764 </td>
+	    <td class="text_cn">810 </td>
+	    <td class="text_cn">1.429 </td>
+	        
+		<td class="text_cn">0.900 </td>
+	    <td class="text_cn">866 </td>
+	    <td class="text_cn">0.779 </td>
+	        
+		<td class="text_cn">0.900 </td>
+	    <td class="text_cn">926 </td>
+	    <td class="text_cn">0.833 </td>
+	        
+		<td class="text_cn">0.190 </td>
+	    <td class="text_cn">1005 </td>
+	    <td class="text_cn">0.191 </td>
+	        
+		<td class="text_cn">1.241 </td>
+	    <td class="text_cn">1009 </td>
+	    <td class="text_cn">1.252 </td>
+	        
+		<td class="text_cn">0.520 </td>
+	    <td class="text_cn">1015 </td>
+	    <td class="text_cn">0.528 </td>
+	        
+		<td class="text_cn">0.630 </td>
+	    <td class="text_cn">805 </td>
+	    <td class="text_cn">0.507 </td>
+	        
+		<td class="text_cn">0.693 </td>
+	    <td class="text_cn">925 </td>
+	    <td class="text_cn">0.641 </td>
+	        
+		<td class="text_cn">0.706 </td>
+	    <td class="text_cn">715 </td>
+	    <td class="text_cn">0.505 </td>
+	        
+		<td class="text_cn">1.131 </td>
+	    <td class="text_cn">880 </td>
+	    <td class="text_cn">0.995 </td>
+	        
+		<td class="text_cn">0.760 </td>
+	    <td class="text_cn">608 </td>
+	    <td class="text_cn">0.462 </td>
+	        
+		<td class="text_cn">1.090 </td>
+	    <td class="text_cn">955 </td>
+	    <td class="text_cn">1.041 </td>
+	        
+		<td class="text_cn">1.841 </td>
+	    <td class="text_cn">748 </td>
+	    <td class="text_cn">1.377 </td>
+	        
+		<td class="text_cn">1.257 </td>
+	    <td class="text_cn">988 </td>
+	    <td class="text_cn">1.242 </td>
+	        
+		<td class="text_cn">1.129 </td>
+	    <td class="text_cn">975 </td>
+	    <td class="text_cn">1.101 </td>
+	        
+		<td class="text_cn">1.286 </td>
+	    <td class="text_cn">1056 </td>
+	    <td class="text_cn">1.358 </td>
+	   </tr>
+			
+<tr>
+	 <td class="text_cn" >9.</td>
+     <td width="200"><a href="https://www.sopa.org/district-wise-details/?arrive=2022&state=Telangana&submit=Search">Telangana</a></td>
+          
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">- </td>
+	    <td class="text_cn">NAN </td>
+	    <td class="text_cn">- </td>
+	        
+		<td class="text_cn">3.488 </td>
+	    <td class="text_cn">1015 </td>
+	    <td class="text_cn">3.540 </td>
+	        
+		<td class="text_cn">1.754 </td>
+	    <td class="text_cn">1005 </td>
+	    <td class="text_cn">1.763 </td>
+	   </tr>
+		<tr>
+ 	<td></td>
+    <td><b>Grand Total</b></td>        
+    
+                <td class="text_cn"><b>88.496 </b></td>
+       <td class="text_cn"><b>1090 </b></td>
+        <td class="text_cn"><b>96.421 </b></td>
+    	            <td class="text_cn"><b>96.242 </b></td>
+       <td class="text_cn"><b>967 </b></td>
+        <td class="text_cn"><b>93.077 </b></td>
+    	            <td class="text_cn"><b>96.709 </b></td>
+       <td class="text_cn"><b>1006 </b></td>
+        <td class="text_cn"><b>97.251 </b></td>
+    	            <td class="text_cn"><b>93.033 </b></td>
+       <td class="text_cn"><b>1089 </b></td>
+        <td class="text_cn"><b>101.286 </b></td>
+    	            <td class="text_cn"><b>103.338 </b></td>
+       <td class="text_cn"><b>1127 </b></td>
+        <td class="text_cn"><b>116.511 </b></td>
+    	            <td class="text_cn"><b>106.948 </b></td>
+       <td class="text_cn"><b>1139 </b></td>
+        <td class="text_cn"><b>121.857 </b></td>
+    	            <td class="text_cn"><b>120.326 </b></td>
+       <td class="text_cn"><b>784 </b></td>
+        <td class="text_cn"><b>94.355 </b></td>
+    	            <td class="text_cn"><b>108.835 </b></td>
+       <td class="text_cn"><b>800 </b></td>
+        <td class="text_cn"><b>87.108 </b></td>
+    	            <td class="text_cn"><b>110.657 </b></td>
+       <td class="text_cn"><b>626 </b></td>
+        <td class="text_cn"><b>69.289 </b></td>
+    	            <td class="text_cn"><b>109.716 </b></td>
+       <td class="text_cn"><b>1002 </b></td>
+        <td class="text_cn"><b>109.923 </b></td>
+    	            <td class="text_cn"><b>101.561 </b></td>
+       <td class="text_cn"><b>822 </b></td>
+        <td class="text_cn"><b>83.504 </b></td>
+    	            <td class="text_cn"><b>108.395 </b></td>
+       <td class="text_cn"><b>1009 </b></td>
+        <td class="text_cn"><b>109.336 </b></td>
+    	            <td class="text_cn"><b>107.615 </b></td>
+       <td class="text_cn"><b>865 </b></td>
+        <td class="text_cn"><b>93.061 </b></td>
+    	            <td class="text_cn"><b>118.385 </b></td>
+       <td class="text_cn"><b>883 </b></td>
+        <td class="text_cn"><b>104.559 </b></td>
+    	            <td class="text_cn"><b>119.982 </b></td>
+       <td class="text_cn"><b>991 </b></td>
+        <td class="text_cn"><b>118.888 </b></td>
+    	            <td class="text_cn"><b>114.487 </b></td>
+       <td class="text_cn"><b>1051 </b></td>
+        <td class="text_cn"><b>120.383 </b></td>
+    	</tr>
+</tbody>
+
+
+</table>
+</div>
