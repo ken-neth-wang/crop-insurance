@@ -11,7 +11,8 @@ wed feb 8: haven't done this,not enough yield points to include
 3. make sure low troughs are good 
 feb 8: checked using plot_summary_trials, makes sense from what I know
 
-4. add in insurance 
+4. add in insurance policies (ie. work on )
+    a. determine insurance policy payout, premium, and expected value for insurance company (has to >= 0)
 insurance policies, you just buy x amount of insurance 
 
 1. vary over cash and insurance
