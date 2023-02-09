@@ -14,6 +14,26 @@ feb 8: checked using plot_summary_trials, makes sense from what I know
 4. add in insurance policies (ie. work on )
     a. determine insurance policy payout, premium, and expected value for insurance company (has to >= 0)
 insurance policies, you just buy x amount of insurance 
+        i. do this by empirically calculating expected value through monte carlo simulations (just as for the farmer) the payout vs payments
+    b. determine thresholds / functions of the insurance policies and test them 
+    c. vary over starting cash and insurance amount being bought
+
+
+feb 8 meeting notes: 
+1. rain in soil moisture -> leads 
+2. understand what times of year does the rainfall matter -> maybe read this from the papers
+3. irrigation -> look into it more 
+4. main issue: developed world has differenet mindset -> auto insurance premium vs crop insurance
+5. also farmer behavioral -> willlingness to buy insurance (what makes them buy)
+
+
+next steps: 
+1. start with double threshold, double payout, while holding expected payout 
+2. hold expected payouts = 0, change the thresholds and play around 
+3. rain->insurance_payout: compensate for average reduction in yield
+
+
+
 
 1. vary over cash and insurance
 2. one extreme is cash poor, contrasinted by cash and can't buy as much insurance as eoptimal 
