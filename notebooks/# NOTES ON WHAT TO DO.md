@@ -11,7 +11,7 @@ wed feb 8: haven't done this,not enough yield points to include
 3. make sure low troughs are good 
 feb 8: checked using plot_summary_trials, makes sense from what I know
 
-4. add in insurance policies (ie. work on )
+4. add in insurance policies (ie. work on)
     a. determine insurance policy payout, premium, and expected value for insurance company (has to >= 0)
 insurance policies, you just buy x amount of insurance 
         i. do this by empirically calculating expected value through monte carlo simulations (just as for the farmer) the payout vs payments
@@ -32,9 +32,6 @@ next steps:
 2. hold expected payouts = 0, change the thresholds and play around 
 3. rain->insurance_payout: compensate for average reduction in yield
 
-
-
-
 1. vary over cash and insurance
 2. one extreme is cash poor, contrasinted by cash and can't buy as much insurance as eoptimal 
 3. other extreme is assume unconstrained 
@@ -50,11 +47,25 @@ demonstrate that
     shortfall from assumed threshold on income, expected shortfall 
     cash after 5 years from some x assumed cash (distribution) 
 4. show that annual rainfall is not useful as opposed to monthly 
-5. 
-
-
 
 
 Things I would like to do: 
 1. make code more readable
+    A bit more readable (everything after the data and pre-processing)
 2. Create Simulation Class, and then vary the insurance policy in each class (so then the code is standardized, basically Object Oriented Programming)
+    monday feb 20 update: I basically did this but with a general insurance_sim function, then we pass everything into the function based on what we want
+
+
+feb 20 work: 
+1. fixed code a bit to be more readable
+2. created a better plot summarizer 
+    a. plotting each trial's cash with and without insurance 
+    b. summarizing over all the trials what happens to the farmers
+3. use monte carlo to determine values for each type of insurance policy each parameter, parameters: premium, payout, threshold value(s) -> hold others, change one
+    a. check that over all the trials that the percentage payouts 
+    b. 
+
+
+feb 20 questions: 
+1. given that my yield function is linear, does it make sense to have a double threshold? 
+    to answer my own question, maybe I can set thresholds based on the different months 
