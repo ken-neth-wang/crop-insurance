@@ -63,9 +63,50 @@ feb 20 work:
     b. summarizing over all the trials what happens to the farmers
 3. use monte carlo to determine values for each type of insurance policy each parameter, parameters: premium, payout, threshold value(s) -> hold others, change one
     a. check that over all the trials that the percentage payouts 
-    b. 
+    b. ok, instead, coded a thing taht determines the premium for payout and threshold value that sets expected value = 0 
+
+
+4. summary of what my insurance functions do: 
+    a. I first set-up a plotter
+    b. then, i set-up a monte carlo simulation that determines how often a certain policy will payout (given certain threshold values)
+    c. then, I set-up a function that determines for a fixed payout (since payouts can be adjusted using amount of insurance purchased) 
+    what the appropriate premium would be for that threshold value (and payout percentage)
+    d. finally, i have the payout, the premium, and the threshold values that reuslt in expected value of 0 for the insurance company 
+    e. i then iterate over possible amounts of insurance the farmer can buy to test the difference
+
+
+1. try different amounts of insurance
+
+STILL NEED TO DO: 
+2. try to set-up different types of insurance
+3. try to set-up different metrics to measure: 
+    a. time to bankruptcy 
+    b. some utility function 
+    c. shortfall from assumed threshold on income, expected shortfall
+    d. cash after 5 years from some x assumed cash 
+
+
+
+
+OTHER THINGS: 
+1. maybe design the insurance simulator to automatically find the EV neutral payout amount (ie. each simulation, the insurance company comes out at EV = 0)
 
 
 feb 20 questions: 
 1. given that my yield function is linear, does it make sense to have a double threshold? 
     to answer my own question, maybe I can set thresholds based on the different months 
+
+feb 20 FINDINGS: 
+1. using single-lower-threshold policy, simulations show that for low binary thresholds (less than 10% of payout probability), the farmers are actually hurt even more in down years ON AVERAGE 
+    a. we can see this from looking at graphs for year 2, where year 2 is on average a down year (lowest cash from yields without insurance). In this case, with low payout probabilities, farmers are better off on average without the insurance, simply because they are paying a bit of many but then not actually getting the stabilizing effect due to low probability of payout. 
+2. as expected, increasing the amount of insurance (ie. the # of contracts purchased) increases the deviations, with everything else hold constant
+3. 
+
+
+feb 20: next steps
+1. just use 10 trials, look at 10 farmers and go through rain, yields, to show that each farmer works (examples) 
+    figure out what's going on with low troughs 
+    find explanations 
+2. try quadratic (eyeball the function and just make it up lowkey) function 
+    -> then use a double threshold 
+3. explaining why certain things happen (ie. the low troughs in the single-lower-threshold-policy)
