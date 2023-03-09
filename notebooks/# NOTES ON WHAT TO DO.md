@@ -110,3 +110,12 @@ feb 20: next steps
 2. try quadratic (eyeball the function and just make it up lowkey) function 
     -> then use a double threshold 
 3. explaining why certain things happen (ie. the low troughs in the single-lower-threshold-policy)
+
+
+
+march 8 steps: 
+1. let's try 10 trials (ie. 10 farmers).
+    plotting the insurance payments, it's clear that the policy is paying out when it really shouldn't be. That's causing bad performance. 
+    IDEA: we should be constructing an insurance policy that 1. pays out more often (like 50% of the time), 2. 
+    ok even on linear, the problem is that the rain and yield predictor is still not good enough (too many times where the rain and the yield don't actually line up well)
+    in such cases, the bad cases can get amplified more than they should be
