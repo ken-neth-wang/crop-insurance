@@ -119,3 +119,112 @@ march 8 steps:
     IDEA: we should be constructing an insurance policy that 1. pays out more often (like 50% of the time), 2. 
     ok even on linear, the problem is that the rain and yield predictor is still not good enough (too many times where the rain and the yield don't actually line up well)
     in such cases, the bad cases can get amplified more than they should be
+March 9 notes: 
+1. From plotting specific farmers, I've realized that my yield to rain is not very good. In other words, making new yield to rain that is a bit better. 
+    OK SO I tried to do PCA so I can build a quadratic function / simplified function. 
+
+
+    at planting time, we know the past 6 months of weather. so we should be only considering the next 6 months of rain. 
+
+
+
+    ok so now, we have a lin_reg_india function that predicts based off the last 6 months. Then, x[7] and x[11] are actually negative and not good. 
+
+should i just simplify the rain to yield function? right now its based off 12 months, but PCA will make it unintelligible
+
+
+
+may june july, planting, august, growing, septmeber october harvest
+
+take a look at the data to see if these relationships actually exist 
+
+
+1. try to get more data 
+2. look at the last couple of years of data 
+
+
+
+march 22 notes 
+1. going to assume jun/ jul is plant, august is grow, sept/oct is harvest 
+2. paper I'm looking at looks at soybean yield responses to precipitation and temp
+    a. they are saying negative relationship on maximum temperature from 24 to 29 degrees c
+    b. roughly quadratic looking (inverted U) curve for the response to precipitation
+    c. this paper is using max and min temperatures
+3. robertschlenke -> temp increases until 29 c, then goes down 
+4. online says jun jul plant, august, sept oct harvest
+5. precipitation matters, especially during growing season -> increased yields
+        https://www.ars.usda.gov/ARSUserFiles/3495/soybean%20CC%20AJ%202021.pdf
+        On the other hand, Mall, Lal, Bahatia, Rathore, and
+        Singh (2004) predicted that CROPGRO soybean yield would
+        decrease in India at elevated air temperature and doubled CO2
+        concentration. 
+6. soybean planting date is critical 
+    https://www.sciencedirect.com/science/article/pii/S0168192303001576?via%3Dihub
+7. https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1017/S1350482702002104
+    specifically, >= 80 cm of water during growing period, (first 100 days), then last 15 days should be dry (<= 3 cm)
+    temperature <= 36 (specifically in madhya pradesh)
+    5cm or more received before sowing
+8. indiaagronet
+    15 -32 c, higher temp for rapid growth
+    60-65 cm  rainfall at or just before flowering
+    rains during maturity hurts quality of yield
+    https://www.agrifarming.in/soybean-farming-information
+    26-32 c
+    soybeans: short day plants
+    https://www.nsdcindia.org/scmp/assets/image/1913597640-20_SoybeanProductionTechnology_preview.pdf
+    resistant to temperatures, decrease above 35 c, and below 18c 
+    minimum temperatures if 10c
+    26 - 30 c is optimum temperatures for growth
+    40-50 cm in season-> high moisture for germination, flowering, and pod formation
+    180 mm is minimum for in-crop rain, 40-60% yield decline, ideal is 500 - 1000 mm
+    5-15 days of drought can also result in death of crop 
+    growing period is 100 to 130 days 
+    stages: vegetative growth -> reproductive
+    cycles: sow -> germination (5 days or so after sowing) -> emergence -> flowering -> pod formation -> maturity of pods
+
+OH WAIT 
+ok I have data from multiple regions rainfall for the last 10 years. I probably can also find the yields for those regions for the last 10 years. maybe I can use that? -> try to build off of that data 
+
+OR i can boot camp / use windows desktop back at home, and try running the CROP gro simulation to get a yield model and vary rainfall amounts 
+
+if i were to guess, we should follow the kumar paper on optimal sowing dates from 2002
+1. week before sow: >= 50 mm of rain
+2. crop growth (~100 days after sowing): >= 80 mm of rain
+    excessive flooding is bad, so flooding for more than 48 hours is bad -> not sure if we can control for this in anyway, since we are looking at monthly 
+        -> maybe there's a variable of like if there's sustained flooding for more than 48 hours, triggers a payout
+    https://extension.umn.edu/growing-soybean/flooded-soybean#temperature-during-the-flood-542761
+    https://www.canr.msu.edu/news/how-does-flooding-affect-soybean-germination
+3. harvest period (15 days, after crop growth): <= 30 mm of rain
+4. temperature: max temperature <= 36 C in a week during growing
+        we can also probably add that min tempearture >= 15 during growing 
+
+
+https://www.ukm.my/ipi/wp-content/uploads/2013/07/57.1999Growth-and-yield-responses-of-soybean-in-Madhya-Pradesh.pdf
+1. USED CROP GRO to simulate soybean responses to temperature and rainfall (in c02, for climate change predictions)
+    -> % increases in cumulative rainfall would respond with increased changes in yields
+    -> -4 to 0 change in temperature would result in inc in yields, while increases would result in worse and worse yields 
+        -> THESE OUTCOMES MATCH THE RESULTS FROM OTHER PAPERS ON SOYBEAN AND RESPONSES TO CLIMATE CHANGE
+
+burning degree days + growing degree days (penalize for burning) 
+variables:
+1. rain in growing
+2. rain in harvest
+3. burning degree days
+4. growing degree days 
+build predictive model based off this 
+
+main goal: 1. show that single threshold is worse than alterantives,    
+2. assumption is that rain is good up to a certain point, harvest rain is bad, burning degree days 
+    say that there's some degree of variability (expected yield - actual yield)
+        play around with what that variability will be (vary over some degree of variability)
+        might discover that certain policies is bad for the farmer even if you can predict the yield with accuracy 
+
+3. play around with percentiles 
+4. figure out -> is variability ends up the same for hte farmer's income
+
+
+
+1. what is shape of the yield? 
+2. variability -> think about hte standard deviation and the coefficient of variation for the built 
+
+
