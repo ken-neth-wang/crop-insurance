@@ -227,4 +227,14 @@ main goal: 1. show that single threshold is worse than alterantives,
 1. what is shape of the yield? 
 2. variability -> think about hte standard deviation and the coefficient of variation for the built 
 
+march 27: from last meeting, going to ignore the whole data / building yield model for now: 
+1. remedy by saying that we have some yield function, with x level of variability. this yield function has some very basic understanding of the general relationship between temperature / rainfall and the yields
+2. for instance, yield function is a inverted triangle. in the good region, the yield function has good variability but in the bad region, the coefficient of variation is much higher 
+
+
+* Next Steps * 
+1. code up yield function class 
+2. code up insurance policy class 
+3. code up simulator (modify current code)
+
 
