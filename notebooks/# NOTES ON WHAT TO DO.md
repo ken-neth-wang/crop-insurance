@@ -234,7 +234,65 @@ march 27: from last meeting, going to ignore the whole data / building yield mod
 
 * Next Steps * 
 1. code up yield function class 
+    done for 2d rain (growing and harvest rain)
 2. code up insurance policy class 
+    not really done 
 3. code up simulator (modify current code)
+    need to do (already done just need to copy over code)
+
+something to watch out for: i just ignored the covariance in the rain data, i'm sure there's covariance between growing period rain and harvest rain (will fix this later)
+
+
+
+
+april 4th notes: 
+1. desired behavior of insurance -> on good years, with policy is below without, on bad years, with policy is above  (stabilizing effect)
+
+2. expected value of insurance is same, so expected mean should be the same right (for the farmer's welfare) 
+    -> essentially we are reducing variance while expected mean stays the same 
+
+3. testing variance with and without insurance 
+    -> seems like the single threshold is increasing the variance no matter what, with expected value = 0 
+    -> same issue as before, even when variability of yield is low 
+4. variability of yield function isn't perfect
+    1. while variability allows you to control yield predict vs actual, 
+    one problem is that increasing variability can make it so that actual yield becomes entirely uncorrelated to weather (so then the variance with insurance and without insurance becomes very similar, since most of the variance is a product of the variability in the predictor )
+
+5. is it bad if the insurance policy becomes a replica of the underlying weather -> yield function (ie. rain < 800, yield down. insurance policy is rain > 800, yield up)
+
+
+
+6. conclusion: (intermediary) -> even when i match the ins with yield, 
+what happens is that there isn't high variance on the rain
+    -> investigating the high variance on rain, seems like normal is not a good distribution for this (at least doesn't really match distribution i see)
+
+    -> not high enough variance on rain means that insurance policy isn't very useful here -> need to increase rain variance
+
+
+    -> pretty sure the way you reduce variance (aka reduce differences), the best way to do so is to minimize the loss between your insurance policy and the actual yield -> MAYBE WE SHOW THIS? USING TRIALS EXPERIMENTS
+
+
+
+some regime with noise where it's mapped in between 
+
+write code to try a bunch of numbers to see what's affects 
+    -> to find the magnitudes 
+
+try to optimize for a double threshold linear 
+
+    minimize downside function where (a, b)
+
+different rain distribution -> different 
+
+matching the yield funtion is better 
+
+
+### APRIL 4TH 
+NOTES ON WHAT WE NEED TO DO NEXT: 
+1. HIGH LEVEL -> WRITE CODE WHERE WE CAN EASILY JUST SHOVE NUMBERS IN AND TRY A BUNCH OF NUMBERS -> prof is going to try to solve analytical solution to this mathematically
+2. THEN USE CODE / ANALYTICAL TO FIND SOLUTION 
+3. INSURANCE FUNCTION IS JUST NEGATIVE OF THE YIELD FUNCTION, BUT WE INTRODUCE DOUBLE THRESHOLD 
+4. INTUITION FOR WHY THIS IS BETTER -> NEGATIVE OF YIELD IS BETTER THAN JUST FLAT PAYOUT CAUSE ITS CLOSER TO THE TRUE YIELD FUNCTION (Ie. WE WANT TO MINIMIZE VARIANCE, VARIANCE IS SUM OF NOISE(prediction function, diff between actual and prediction) and NOISE(differences from predicted yield and the insurance payout -> leads to variance). we minimize the second term with more complex insurnace functions. )
+
 
 
