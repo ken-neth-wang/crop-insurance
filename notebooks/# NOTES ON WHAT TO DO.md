@@ -294,5 +294,8 @@ NOTES ON WHAT WE NEED TO DO NEXT:
 3. INSURANCE FUNCTION IS JUST NEGATIVE OF THE YIELD FUNCTION, BUT WE INTRODUCE DOUBLE THRESHOLD 
 4. INTUITION FOR WHY THIS IS BETTER -> NEGATIVE OF YIELD IS BETTER THAN JUST FLAT PAYOUT CAUSE ITS CLOSER TO THE TRUE YIELD FUNCTION (Ie. WE WANT TO MINIMIZE VARIANCE, VARIANCE IS SUM OF NOISE(prediction function, diff between actual and prediction) and NOISE(differences from predicted yield and the insurance payout -> leads to variance). we minimize the second term with more complex insurnace functions. )
 
+### APIRL 10th 
+
+
 
 
