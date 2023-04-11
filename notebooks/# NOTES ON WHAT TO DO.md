@@ -295,7 +295,44 @@ NOTES ON WHAT WE NEED TO DO NEXT:
 4. INTUITION FOR WHY THIS IS BETTER -> NEGATIVE OF YIELD IS BETTER THAN JUST FLAT PAYOUT CAUSE ITS CLOSER TO THE TRUE YIELD FUNCTION (Ie. WE WANT TO MINIMIZE VARIANCE, VARIANCE IS SUM OF NOISE(prediction function, diff between actual and prediction) and NOISE(differences from predicted yield and the insurance payout -> leads to variance). we minimize the second term with more complex insurnace functions. )
 
 ### APIRL 10th 
+TODO: 
+1. set-up insurance function as negative of yield function with thresholds
+    DONE
+2. setup premium calculator (since payout is just negative, there is some premium where expected value = 0)
+3. ok so we are ignoring the previous, handcrafted insurance policies. 
+now implement overarching simulation, plotter, and premium calculator
+# assumptions I'm doing so far-> one yield function, 1 dimension (growing rain)
+-> inputs to big function: 
+DONE we got the big ultimate simulator in 
+
+
+TODO -> determine downside function 
+
+TODO -> sit down and outline what exactly we are assuming here more 
+
+TODO -> evaluate it across different thresholds
 
 
 
+two threshold policy is a whole letter than the one threhsold policy 
+even with moderate levels of variability 
 
+
+
+minimize: downside (variance)
+
+expected shortfall 
+
+optimize single threshold 
+
+optimize double threhsold 
+
+
+
+TODO: increase variability 
+
+let me look at the variability (make sure the variability number makes sense) maintain the same seed 
+
+store the mean and variance of the profits for each level of variability 
+
+stick with two thresholds, arbitrary but see the interactions between variability 
