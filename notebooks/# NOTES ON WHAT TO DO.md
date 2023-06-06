@@ -402,11 +402,15 @@ somethign need to do -> test other insurance policies (i've been doing absolute,
 
 notes from meeting:
 
-find mean of yield -> 
+find mean of yield -> ## 950
 stadnard deviation: increments of 50 until 300, ie. 50, 100, 150, 200, 250, 300 
+
+try different values of standard deviations
 
 also, truncate on low side for yield
     -> yield can't go below 0 
+    -> best way to do this is to make sure samples from growing
+        rain don't go below 500
 
 
 rain distribution:
@@ -432,4 +436,66 @@ baseline:
 1. really nice policy, completely compensating
 2. what would it be like if we have simple policy
 
-3. can also discover: variability gets too high, maybe no benefit to doing the more complex policy 
+3. can also discover: variability gets too high, maybe no benefit to doing the more complex policy
+
+
+parameters: 
+1. present on those, so make sure they are good
+
+
+# may 29 updates
+1. fixed yield, mean is 950, min ~ 600, max ~1100 
+    -> this is based off empirical data
+2. as long as growing rain data > 500 mm, yield > 0 
+3. STD was wrong, I mixed the harvest and growing rain (literally the code was wrong)
+4. empirical simulation now 
+
+-> it's not actually better on the empirical distribution. this is because the rain to yield has a different peak (peak is at 800, but mean of rain is at 950)
+
+
+
+updates: 
+
+1. fixed the normal, fixed the mean, found mean of yield after normal
+2. tried empiricial as well 
+3. 
+
+
+
+
+consider alternative yield functions 
+
+1. could be flat after 800
+2. change slope on right hand side of yield (could be 0, or just less) -> try a few different slopes and the slope of the insurance policy 
+3. 0.25, 0.5, different values 
+
+growing rain seems partially attributable to harvest rain 
+
+
+if harvest rain 
+
+
+
+
+
+summary of parameters: 
+1. characterize the situation (enough to do so)
+2. pictures of the graphs (here's what we are assuming about the yields)
+
+
+suppose there's change in climate, try just last few years of data. 
+
+story: -> tell about data, plot rainfall, etc. 
+
+ex. originally started with 117 yrs, going to go on with only last 25, etc. 
+ex. show difference between single threshold 
+
+ex. payment only takes place < 10th or 15th or 20th percentile of sprouting season rain>, will probalby see it doesn't have any benefit 
+
+
+# june 5 
+working on 
+1. clean code and delete a bunch of useless stuff 
+2. figure out what's the goal 
+    -> goals -> help provide numerical backing for presentation
+    -> 
