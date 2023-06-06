@@ -314,7 +314,7 @@ TODO -> evaluate it across different thresholds
 
 
 
-two threshold policy is a whole letter than the one threhsold policy 
+two threshold policy is a whole better than the one threhsold policy 
 even with moderate levels of variability 
 
 
@@ -336,3 +336,100 @@ let me look at the variability (make sure the variability number makes sense) ma
 store the mean and variance of the profits for each level of variability 
 
 stick with two thresholds, arbitrary but see the interactions between variability 
+
+
+# MAY 3rd 
+goal: 
+
+show two threshold is better than one threshold, even with moderate levels of variability 
+
+1. increase variability and maintain same seed DONE -> we fix seed, variability is standard deviation, checked
+2. store the mean and variance of the profits for each level of variability
+3. stick with two thresholds, see interactions between variability. 
+4. figure out assumptions here 
+5. evaluate across different thresholds 
+
+min variance -> boring 
+DO THIS INSTEAD: min shortfall (x, target) -> much more applicable to the farmer story 
+
+
+two ways: one is to look at a particular year. 
+the other would be interesting to accumulate the cash over time, for a span of five years, cash position, when will it hit 
+
+
+
+TODO for each year, calculate percentage of farmers (over like n = 1000 trials) who died out (based on some thresholds)
+
+simulation -> insurance policy, insurance policy thresholds, initial farmer position, shortfall target, survival target (for the percentage survival analysis) -> cash shortfall 
+
+# May 18 
+1. add shortfall mechanism 
+2. plot across different variabilities for a single year 
+3. survival analysis
+
+
+todo: check numbers (variability -> is it too wild, tone it down, locusts + drought issues)
+    -> make sure numbers are in the right range 
+
+todo: figure out better way to visualize / graph policy shortfalls and no policy shortfalls 
+
+todo: make better notes on some of the experimentation 
+
+# May 24th: 
+TODOS:
+1. check numbers 
+2. visualize policy shortfalls vs no policy shortfalls
+3. notes
+
+
+
+
+
+
+1. changing yield_variability and effects on shortfall 
+    shortfall with policy and shortfall target = 0 (ie. we only add the shortfalls from 0, ie. whenever they are negative)
+        FIXED A BUG WITH SHORTFALL CALCULATOR -> function wasn't working properly, so it was weighting things weirdly. Shortfalls from 0 happens a lot. 
+        yield_variability = 0 -> premium is set to be 0, so the expected shortfalls with policy is 0.0 
+            FIXED after fixing the shortfall bug. 
+
+
+conclusions: seems to be that policy shortfalls are much better (when shortfall targets are less than 0), which suggests that policy is much better off for welfare 
+
+
+
+somethign need to do -> test other insurance policies (i've been doing absolute, linear two threshold, but haven't really shown for inferior thresholds)
+
+
+notes from meeting:
+
+find mean of yield -> 
+stadnard deviation: increments of 50 until 300, ie. 50, 100, 150, 200, 250, 300 
+
+also, truncate on low side for yield
+    -> yield can't go below 0 
+
+
+rain distribution:
+1. not quite normal 
+2. standard deviation is kind of off 
+3. empirical distribution -> draw from empirical distribution: 
+
+
+todos:
+1. fix standard deviation
+2. redo normal 
+3. try empirical distribution
+4. just cycle through growing_rain_data instead of simulating entire mean 
+5. try fitting a non-normal known distribution (beta, something), or maybe 
+
+6. calculate standard deviation of the yield across the data on the non-normal distribution
+
+-> calibration, make sure the values align 
+
+
+
+baseline: 
+1. really nice policy, completely compensating
+2. what would it be like if we have simple policy
+
+3. can also discover: variability gets too high, maybe no benefit to doing the more complex policy 

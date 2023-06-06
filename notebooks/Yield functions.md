@@ -33,3 +33,5 @@ Yield functions
 
 3. need to bake in some variability into the simulator (ie. the yield function predicts this, the actual is yield + N(0, gamma), where we input some constant coefficient of variation)
     WE SHOULD FIND THE AVERAGE YIELD PREDICTED BY THE FUNCTION OVER THE REAL RAIN DATA. THEN, MATCH THAT TO ACTUAL YIELD DATA (ie. the actual yield mean) AS BEST AS WE CAN. THEN, TAKE THAT MEAN TO various coefficient of variations
+
+    
