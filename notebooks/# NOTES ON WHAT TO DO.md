@@ -488,6 +488,7 @@ suppose there's change in climate, try just last few years of data.
 story: -> tell about data, plot rainfall, etc. 
 
 ex. originally started with 117 yrs, going to go on with only last 25, etc. 
+
 ex. show difference between single threshold 
 
 ex. payment only takes place < 10th or 15th or 20th percentile of sprouting season rain>, will probalby see it doesn't have any benefit 
@@ -498,4 +499,19 @@ working on
 1. clean code and delete a bunch of useless stuff 
 2. figure out what's the goal 
     -> goals -> help provide numerical backing for presentation
-    -> 
+
+
+# june 6
+what done: 
+1. cleaned code
+2. deleted a bunch of useless cells
+3. combined some code together
+4. added insurance modifier (only returns positive yields)
+
+5. ok cleaned up everything
+
+now -> figure out what to do for numerical backing
+
+# june 7 
+what done: 
+1. wrote up story for data, and assumptions for code 
